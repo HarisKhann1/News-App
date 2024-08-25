@@ -56,13 +56,22 @@ function fillDataInCard(cardClone, article) {
     })
 }
 
-let curSelectedNav = null;
+let curSelectedNav = []
 function onNavItemClick(id){
     fetchNews(id);  
-    const navItem = document.getElementById(id);
-    curSelectedNav?.classList.remove('active'); // if the curSelectedNav is not null then remove active class
-    curSelectedNav = navItem;
-    curSelectedNav.classList.add('active');    
+    // Get all elements with the specified id
+    const navItem = document.querySelectorAll(`#${id}`);
+    // Remove 'active' class from previously selected items
+    curSelectedNav.forEach((navItem) => {
+            navItem?.classList.remove('active'); // if the curSelectedNav is not null then remove active class
+        })
+
+    // Update curSelectedNav with the currently selected items
+    curSelectedNav = []
+    navItem.forEach((item) => {
+        curSelectedNav.push(item);
+        item.classList.add('active');    
+    });
 }
 
 
@@ -74,6 +83,8 @@ searchButton.addEventListener('click', () => {
         return;
     }
     fetchNews(searchText);
-    curSelectedNav?.classList.remove('active');
-    curSelectedNav = null;
+    curSelectedNav.forEach((navItem) => {
+        navItem?.classList.remove('active'); // if the curSelectedNav is not null then remove active class
+    })
+    curSelectedNav = []
 })
