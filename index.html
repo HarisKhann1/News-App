@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="assests/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="mediaQueries.css">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
     <title>News App</title>
 </head>
 <body>
     <!-- Nav section -->
     <nav>
         <div class="main-nav flex container">
-                <a href="#" class="company-logo" onclick="reload()"><img src="assests/newspaper.png" alt="Company Logo"></a>
+                <a href="#" class="company-logo" onclick="reload()"><img src="./assets/newspaper.png" alt="Company Logo"></a>
             <div class="nav-links">
                 <ul class="flex">
                     <li class="hover-link nav-item" id="sports" onclick="onNavItemClick('sports')">Sports</li>
@@ -25,6 +26,12 @@
             </div>
         </div>
     </nav>
+    <div class="nav-links1">
+        <ul class="flex">
+            <li class="hover-link nav-item" id="sports" onclick="onNavItemClick('sports')">Sports</li>
+            <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
+            <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
+        </ul>
 
     <!-- Main section -->
      <main>
