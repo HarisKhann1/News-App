@@ -72,6 +72,13 @@ nav {
     gap: 16px;
 }
 
+.nav-links1 ul{
+    margin-top: 70px;
+    padding: 0.7rem 12px;
+    background-color:#bbd0e2;
+    gap: 16px;
+}
+
 .hover-link {
     cursor: pointer;
 }
